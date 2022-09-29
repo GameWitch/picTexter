@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>Whats that say?</h1>
+    {% if msg %}
+   <h2>{{ msg }}</h2>
+   {% endif %}
+
+<form method="post" enctype=multipart/form-data>
+  <label for="files">Select files:</label>
+  <input type="file" id="files" name="files" multiple><br><br>
+    <label for="language">Language in picture</label>
+    <select name="language" id="language">
+        <option value="eng">English</option>
+        <option value="nld">Dutch</option>
+    </select><br><br>
+        <label for="translate">Translate to</label>
+    <select name="translate" id="translate">
+        <option value="en">English</option>
+        <option value="nl">Dutch</option>
+    </select><br><br>
+  <input type="submit" value="Upload">
+</form><br><br>
+
+  {% if imgs %}
+     {% for img in imgs %}
+    <img src= {{img}}><br><br>
+    {% endfor %}
+   {% endif %}
+
+  {% if text_list %}
+     {% for text in text_list %}
+    <h1>{{ text }}</h1><br><br>
+    {% endfor %}
+   {% endif %}
+</body>
+</html>
